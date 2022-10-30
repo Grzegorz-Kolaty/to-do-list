@@ -52,20 +52,20 @@
 
     for (const task of tasks) {
       htmlString += `
-          <li
-          class="list__item${task.done ? " list__item--done style" : ""}">
-          <button class="js-done"> ✔ </button>
-          ${task.content}
-          <button class= "js-remove">remove</button>
+        <li>
 
-          </li >
-    `;
+        <button class="js-done ${task.done ? " list__checkButton--true" : "list_checkButton"}">✓</button>
+
+        <span class="list__item${task.done ? " list__item--done" : ""}">${task.content}</span>
+        <button class= "js-remove list__removeButton">🗑</button>
+
+        </li>
+      `;
     }
 
     document.querySelector(".js-tasks").innerHTML = htmlString;
     bindEvents();
   };
-
 
   const onFormSubmit = (event) => {
     event.preventDefault();
@@ -73,10 +73,11 @@
     const inputField = document.querySelector(".js-newTask");
     const newTaskContent = inputField.value.trim();
     if (newTaskContent === "") {
-       return;
+      return;
     }
     addNewTask(newTaskContent);
     inputField.value = "";
+    inputField.focus();
   }
 
   const init = () => {
@@ -84,8 +85,7 @@
 
     const form = document.querySelector(".js-form");
     form.addEventListener("submit", onFormSubmit);
+
   };
-
-
   init();
 }

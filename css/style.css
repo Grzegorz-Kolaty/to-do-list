@@ -5,6 +5,31 @@ html {
     box-sizing: inherit;
 }
 
+.list_checkButton {
+    background-color: green;
+    color: white;
+    background-size: 10px;
+
+}
+.list__checkButton--true {
+    background-color: red;
+    font-size: medium;
+    color: white;
+
+}
+.list__removeButton {
+    background-color: red;
+    font-size: medium;
+    color: white;
+
+}
+
+.list__tasks {
+    list-style: none;
+    padding: 0px;
+}
+
 .list__item--done {
     text-decoration: line-through;
+    text-decoration-thickness: 2px;
 }
