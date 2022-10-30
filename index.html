@@ -22,14 +22,23 @@
 </head>
 
 <body>
-    <form class="js-form">
-        <input class="js-newTask">
-        <button>Add task to do</button>
-    </form>
-
-    <ul class = "js-tasks"></ul>
-
-
+    <div class=container>
+        <section class="addTaskPanel"></section>
+        <header>
+            <h1>To do list</h1>
+        </header>
+        <form class="js-form">
+            <h2>Add new task</h2>
+            <input class="js-newTask">
+            <button>Add task</button>
+        </form>
+        </section>
+        
+        <section class="listTaskPanel">
+            <h2>Tasks list</h2>
+            <ul class="js-tasks"></ul>
+        </section>
+    </div>
 </body>
 
 </html>
