@@ -54,9 +54,10 @@
       htmlString += `
           <li
           class="list__item${task.done ? " list__item--done style" : ""}">
-          <button class="js-done">zrobione?</button>
-          <button class= "js-remove">remove</button>
+          <button class="js-done"> ✔ </button>
           ${task.content}
+          <button class= "js-remove">remove</button>
+
           </li >
     `;
     }
@@ -69,12 +70,13 @@
   const onFormSubmit = (event) => {
     event.preventDefault();
 
-    const newTaskContent = document.querySelector(".js-newTask").value.trim();
+    const inputField = document.querySelector(".js-newTask");
+    const newTaskContent = inputField.value.trim();
     if (newTaskContent === "") {
-      return;
+       return;
     }
-
     addNewTask(newTaskContent);
+    inputField.value = "";
   }
 
   const init = () => {
@@ -83,6 +85,7 @@
     const form = document.querySelector(".js-form");
     form.addEventListener("submit", onFormSubmit);
   };
+
 
   init();
 }
