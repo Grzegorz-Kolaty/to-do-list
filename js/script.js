@@ -63,7 +63,7 @@
     }
     addNewTask(newTaskContent);
     inputField.value = "";
-    inputField.focus();
+    inputField.focus(); // focus pola input po kliknieciu przycisku
   }
 
   const init = () => {
