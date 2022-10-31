@@ -4,11 +4,6 @@
       content: "record a lesson",
       done: false,
     },
-
-    {
-      content: "zjeść pierogi",
-      done: true,
-    },
   ];
 
   const addNewTask = (newTaskContent) => {
