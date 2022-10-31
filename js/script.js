@@ -1,16 +1,10 @@
 {
-  const tasks = [
-    {
-      content: "record a lesson",
-      done: false,
-    },
-  ];
+  const tasks = [];
 
   const addNewTask = (newTaskContent) => {
     tasks.push({
       content: newTaskContent,
     });
-
     render();
   };
 
@@ -48,15 +42,12 @@
     for (const task of tasks) {
       htmlString += `
         <li class="list__tasks">
-
         <button class="js-done${task.done ? " list__checkButton--true" : " list_checkButton"}">✓</button>
-
         <span class="list__item${task.done ? " list__item--done" : ""}">${task.content}</span>
-
         <button class="js-remove list__removeButton">🗑</button>
         </li>
       `;
-    }
+    };
 
     document.querySelector(".js-tasks").innerHTML = htmlString;
     bindEvents();
