@@ -2,40 +2,41 @@
 <html lang="pl">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>to do list</title>
-    <link rel="icon" href="images/icon.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
-        integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="css/style.css" rel="stylesheet">
-    <script defer src="js/script.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap"
-        rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista zadań</title>
+  <link rel="icon" href="images/icon.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="css/style.css" rel="stylesheet">
+  <script defer src="js/script.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 
-<body>
-    <div class=container>
-        <section class="addTaskPanel"></section>
-        <header>
-            <h1>To do list</h1>
-        </header>
-        <form class="js-form">
-            <h2>Add new task</h2>
-            <input autofocus placeholder="What is there to do?" class="js-newTask">
-            <button class="js-newTask--button">Add task</button>
-        </form>
-        </section>
+<body class="body">
+  <header>
+    <h1 class="title">Lista zadań</h1>
+  </header>
+  <div class="container">
+    <section class="headings">
+      <h2 class="section__header">Dodaj nowe zadanie</h2>
+    </section>
+    <form class="form js-form">
+      <input autofocus placeholder="Co jest do zrobienia?" class="js-newTask form__input">
+      <button class="js-newTask--button form__button">Dodaj zadanie</button>
+    </form>
 
-        <section class="listTaskPanel">
-            <h2>Tasks list</h2>
-            <ul class="js-tasks list__tasks"></ul>
-        </section>
-    </div>
+    <section class="headings">
+      <h2 class="section__header">Lista zadań</h2>
+    </section>
+    <section class="section__task">
+      <ul class="list js-tasks"></ul>
+    </section>
+  </div>
 </body>
 
 </html>
