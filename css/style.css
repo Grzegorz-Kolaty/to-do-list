@@ -6,22 +6,18 @@ html {
 }
 
 .list_checkButton {
-    background-color: green;
-    color: white;
-    background-size: 10px;
-
+    background-color: teal;
+    color: teal;
 }
 .list__checkButton--true {
-    background-color: red;
+    background-color: teal;
     font-size: medium;
     color: white;
 
 }
 .list__removeButton {
-    background-color: red;
-    font-size: medium;
+    background-color: teal;
     color: white;
-
 }
 
 .list__tasks {
@@ -31,5 +27,4 @@ html {
 
 .list__item--done {
     text-decoration: line-through;
-    text-decoration-thickness: 2px;
 }
