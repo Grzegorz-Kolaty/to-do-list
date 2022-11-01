@@ -63,8 +63,14 @@
     }
     addNewTask(newTaskContent);
     inputField.value = "";
-    inputField.focus(); // focus pola input po kliknieciu przycisku
-  }
+
+    const focusField = document.querySelector(".js-newTask--button")
+    focusField.addEventListener("click", (event => {
+      document.querySelector(".js-newTask").focus(); //focus okna po nacisnieciu przycisku
+      onFormSubmit(event);
+      
+    }));
+  };
 
   const init = () => {
     render();
