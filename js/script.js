@@ -40,13 +40,13 @@
       let htmlString = "";
 
       for (const task of tasks) {
-         htmlString += `
-        <li class="list__tasks">
-         <button class="js-done${task.done ? " list__checkButton--true" : " list__checkButton"}">✔</button>
-         <span class="list__item${task.done ? " list__item--done" : ""}">${task.content}</span>
-         <button class="js-remove list__removeButton">🗑</button>
-        </li>
-      `;
+       htmlString += `
+         <li class="list__tasks">
+           <button class="js-done${task.done ? " list__checkButton--true" : " list__checkButton"}">✔</button>
+           <span class="list__item${task.done ? " list__item--done" : ""}">${task.content}</span>
+           <button class="js-remove list__removeButton">🗑</button>
+         </li>
+       `;
       };
 
       document.querySelector(".js-tasks").innerHTML = htmlString;
@@ -58,8 +58,10 @@
 
       const inputField = document.querySelector(".js-newTask");
       const newTaskContent = inputField.value.trim();
+
       if (newTaskContent === "") {
          return;
+
       }
       addNewTask(newTaskContent);
       inputField.value = "";  // cleaning up input field 

@@ -21,7 +21,7 @@
     flex-basis: 15%;
 }
 
-@media (max-width: 375px) {
+@media (max-width: 900px) {
     .form__input {
         flex-basis: 100%;
         margin-bottom: 10px;
