@@ -10,7 +10,7 @@
 .form__input {
     border: 2px solid rgb(221, 220, 220);
     padding: 10px;
-    flex-basis: 75%;
+    flex-basis: 80%;
 }
 
 .form__button {

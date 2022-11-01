@@ -42,9 +42,9 @@
     for (const task of tasks) {
       htmlString += `
         <li class="list__tasks">
-        <button class="js-done${task.done ? " list__checkButton--true" : " list_checkButton"}">✓</button>
-        <span class="list__item${task.done ? " list__item--done" : ""}">${task.content}</span>
-        <button class="js-remove list__removeButton">🗑</button>
+         <button class="js-done${task.done ? " list__checkButton--true" : " list__checkButton"}">✔</button>
+         <span class="list__item${task.done ? " list__item--done" : ""}">${task.content}</span>
+         <button class="js-remove list__removeButton">🗑</button>
         </li>
       `;
     };
@@ -68,7 +68,7 @@
     focusField.addEventListener("click", (event => {
       document.querySelector(".js-newTask").focus(); //focus okna po nacisnieciu przycisku
       onFormSubmit(event);
-      
+
     }));
   };
 

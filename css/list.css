@@ -22,20 +22,28 @@
     text-decoration-thickness: 2px;
 }
 
-.list_checkButton {
+.list__checkButton {
     background-color: green;
     color: green;
-    border: none;
+    border: 1px solid white;
     padding: 5px 7px;
     font-size: 20px;
+}
+
+.list__checkButton:active {
+    border: 2px solid black;
 }
 
 .list__checkButton--true {
     background-color: green;
     color: white;
-    border: none;
+    border: 1px solid white;
     padding: 5px 7px;
     font-size: 20px;
+}
+
+.list__checkButton--true:active {
+    border: 2px solid black;
 }
 
 .list__removeButton {
