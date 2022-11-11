@@ -12,12 +12,14 @@
 
    let hideDoneTasks = false;
 
-   const addNewTask = (newTaskContent) => {
+   const addNewTask = (newTaskContent, taskIndex) => {
       tasks = tasks.map((task, index) => {
-            return {
+         if (index === taskIndex)   // wiem, że powinien tu być warunek ale nie rozumiem dlaczego
+         return {
                ...task,
                content: newTaskContent, done: false,
             }
+            return task; // nie wiem dlaczego musze zwrocic task
       });
       render();
    };
