@@ -16,7 +16,6 @@
 .list__button:hover {
     transform: scale(105%);
     transition: 100ms;
-    box-shadow: rgb(0, 0, 0) 0px 0px 2px;
 }
 
 
