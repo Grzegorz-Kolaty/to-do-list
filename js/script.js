@@ -12,14 +12,12 @@
 
    let hideDoneTasks = false;
 
-   const addNewTask = (newTaskContent, taskIndex) => {
+   const addNewTask = (newTaskContent) => {
       tasks = tasks.map((task, index) => {
-         if (index === taskIndex) {       // wiem, że powinien tu być warunek ale nie rozumiem dlaczego
             return {
-               content: newTaskContent, done: false
+               ...task,
+               content: newTaskContent, done: false,
             }
-         }
-         return task; // nie wiem dlaczego musze zwrocic task
       });
       render();
    };
@@ -125,8 +123,8 @@
 
       if (newTaskContent === "") {
          return;
-
       }
+
       addNewTask(newTaskContent);
       inputField.value = "";  // cleaning up input field 
 
