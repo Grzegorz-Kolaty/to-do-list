@@ -14,17 +14,15 @@
 
    const addNewTask = (newTaskContent, taskIndex) => {
       tasks = tasks.map((task, index) => {
-         if (index === taskIndex) {
+         if (index === taskIndex) {       // wiem, że powinien tu być warunek ale nie rozumiem dlaczego
             return {
-               ...task,
-               task: newTaskContent, done: false
+               content: newTaskContent, done: false
             }
          }
+         return task; // nie wiem dlaczego musze zwrocic task
       });
-
       render();
    };
-
 
    /*  kod który działa ale chciałem go zrobić z użyciem .map
    const addNewTask = (newTaskContent) => {
@@ -34,8 +32,8 @@
         ];
         render();
      };
-  
-  */
+    
+   */
 
    const removeTask = (taskIndex) => {
       tasks = [
