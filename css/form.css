@@ -20,11 +20,11 @@
     border: none;
     padding: 10px;
     flex-basis: 15%;
-    transition: 500ms;
+    transition: 300ms;
 
 }
 .form__button:hover {
-    transition: 500ms;
+    transition: 300ms;
     transform: scale(1.25);
 }
 
