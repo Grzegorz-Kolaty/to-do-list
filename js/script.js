@@ -12,29 +12,13 @@
 
    let hideDoneTasks = false;
 
-   // funkcja totalnie nic nie dodaje, nie rozumiem dlaczego
-   const addNewTask = (newTaskContent, taskIndex) => {
-      tasks = tasks.map((task, index) => {
-         if (index === taskIndex)   // wiem, że powinien tu być warunek ale nie rozumiem dlaczego
-         return {
-               ...task,
-               content: newTaskContent, done: false,
-            }
-            return task; // nie wiem dlaczego musze zwrocic task
-      });
+   const addNewTask = (newTaskContent) => {
+      tasks = [
+         ...tasks,
+         { content: newTaskContent, done: false },
+      ];
       render();
    };
-
-   /*  kod który działa ale chciałem go zrobić z użyciem .map
-   const addNewTask = (newTaskContent) => {
-        tasks = [
-           ...tasks,
-           { content: newTaskContent, done: false },
-        ];
-        render();
-     };
-    
-   */
 
    const removeTask = (taskIndex) => {
       tasks = [
@@ -46,29 +30,16 @@
 
    const toggleTaskDone = (taskIndex) => {
       tasks = tasks.map((task, index) => {
-         if (index === taskIndex) {       // wiem, że powinien tu być warunek ale nie rozumiem dlaczego
+         if (index === taskIndex) {
             return {
                ...task,
                done: !task.done,
             }
          }
-         return task; // nie wiem dlaczego musze zwrocic task
+         return task;
       });
-
       render();
    };
-
-   /*   kod który działa ale chciałem go zrobić z użyciem .map
-   const toggleTaskDone = (taskIndex) => {
-      tasks = [
-         ...tasks.slice(0, taskIndex),
-         { ...tasks[taskIndex], done: !tasks[taskIndex].done },
-         ...tasks.slice(taskIndex + 1),
-      ];
-      render();
-   };
-   */
-
 
    const bindEvents = () => {
       const removeButtons = document.querySelectorAll(".js-remove");
