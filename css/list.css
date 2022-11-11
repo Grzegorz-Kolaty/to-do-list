@@ -21,7 +21,7 @@
 }
 
 .list__item:hover {
-    transform: translateX(100px) scale(120%);
+    transform: translateX(18%) scale(135%);
     transition: 300ms;
 }
 
