@@ -14,8 +14,8 @@
 
    const addNewTask = (newTaskContent) => {
       tasks = [
-         ...tasks,
          { content: newTaskContent, done: false },
+         ...tasks,
       ];
       render();
    };
@@ -74,12 +74,9 @@
       document.querySelector(".js-tasks").innerHTML = htmlString;
    }
 
-   const renderButtons = () => { }
-
-   const bindButtonsEvents = () => {
-
-
-   }
+   const renderButtons = () => {
+    }
+   const bindButtonsEvents = () => { }
 
    const render = () => {
       renderTasks();
