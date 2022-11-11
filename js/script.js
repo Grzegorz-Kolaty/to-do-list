@@ -12,6 +12,7 @@
 
    let hideDoneTasks = false;
 
+   // funkcja totalnie nic nie dodaje, nie rozumiem dlaczego
    const addNewTask = (newTaskContent, taskIndex) => {
       tasks = tasks.map((task, index) => {
          if (index === taskIndex)   // wiem, że powinien tu być warunek ale nie rozumiem dlaczego
