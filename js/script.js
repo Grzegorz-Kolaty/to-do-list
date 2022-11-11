@@ -47,13 +47,13 @@
 
    const toggleTaskDone = (taskIndex) => {
       tasks = tasks.map((task, index) => {
-         if (index === taskIndex) {
+         if (index === taskIndex) {       // wiem, że powinien tu być warunek ale nie rozumiem dlaczego
             return {
                ...task,
                done: !task.done,
             }
          }
-         return task;
+         return task; // nie wiem dlaczego musze zwrocic task
       });
 
       render();
