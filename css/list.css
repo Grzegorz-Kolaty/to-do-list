@@ -33,7 +33,6 @@
 .list__item {
     margin-left: 10px;
     transition: 300ms;
-
 }
 
 .list__item:hover {

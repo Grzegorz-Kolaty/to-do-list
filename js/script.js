@@ -12,6 +12,7 @@
 
    let hideDoneTasks = false;
 
+
    const addNewTask = (newTaskContent) => {
       tasks = [
          { content: newTaskContent, done: false },
@@ -41,7 +42,63 @@
       render();
    };
 
+   const showTasksCompleted = () => {
+      tasks = tasks.filter(task => task.done)
+      render()
+   };
+
+   const completeTasksAll = () => { 
+      tasks = tasks.map((task, index) => {
+         if (task.done = false) {
+            return {
+               ...task,
+               done: task.done,
+            }
+         }
+         return task;
+      });
+      render();
+   };
+
+
+   const renderTasks = () => {
+      let htmlString = "";
+      for (const task of tasks) {
+         htmlString += `
+         <li class="list__tasks">
+           <button class="js-done${task.done ? " list__checkButton--true" : " list__checkButton"}">✔</button>
+           <span class="list__item${task.done ? " list__item--done" : ""}">${task.content}</span>
+           <button class="js-remove list__removeButton">🗑</button>
+         </li>
+      `;
+      };
+
+      document.querySelector(".js-tasks").innerHTML = htmlString;
+   }
+
+
+
+   const renderButtons = () => { }
+
    const bindEvents = () => {
+      const completedTasksButtons = document.querySelectorAll(".js-tasksCompleted");
+
+      completedTasksButtons.forEach((completedTasksButton, index) => {
+         completedTasksButton.addEventListener("click", () => {
+            showTasksCompleted(index);
+         });
+      });
+
+      const completeTasksButtons = document.querySelectorAll(".js-completeAll");
+
+      completeTasksButtons.forEach((completeTasksButton, index) => {
+         completeTasksButton.addEventListener("click", () => {
+            completeTasksAll(index);
+         });
+      });
+   }
+
+   const bindButtonsEvents = () => {
       const removeButtons = document.querySelectorAll(".js-remove");
 
       removeButtons.forEach((removeButtons, index) => {
@@ -59,30 +116,10 @@
       });
    }
 
-   const renderTasks = () => {
-      let htmlString = "";
-      for (const task of tasks) {
-         htmlString += `
-         <li class="list__tasks">
-           <button class="js-done${task.done ? " list__checkButton--true" : " list__checkButton"}">✔</button>
-           <span class="list__item${task.done ? " list__item--done" : ""}">${task.content}</span>
-           <button class="js-remove list__removeButton">🗑</button>
-         </li>
-      `;
-      };
-
-      document.querySelector(".js-tasks").innerHTML = htmlString;
-   }
-
-   const renderButtons = () => {
-    }
-   const bindButtonsEvents = () => { }
-
    const render = () => {
       renderTasks();
       renderButtons();
-      bindButtonsEvents()
-
+      bindButtonsEvents();
       bindEvents();
    };
 
