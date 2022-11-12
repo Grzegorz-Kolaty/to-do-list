@@ -47,12 +47,12 @@
       render()
    };
 
-   const completeTasksAll = () => { 
-      tasks = tasks.map((task, index) => {
-         if (task.done = false) {
+   const completeTasksAll = () => {
+      tasks = tasks.map((task) => {
+         if (task.done === false) {
             return {
                ...task,
-               done: task.done,
+               done: !task.done,
             }
          }
          return task;
@@ -86,6 +86,7 @@
       completedTasksButtons.forEach((completedTasksButton, index) => {
          completedTasksButton.addEventListener("click", () => {
             showTasksCompleted(index);
+            
          });
       });
 
