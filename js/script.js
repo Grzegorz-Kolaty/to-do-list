@@ -12,7 +12,6 @@
 
    let hideDoneTasks = false;
 
-
    const addNewTask = (newTaskContent) => {
       tasks = [
          { content: newTaskContent, done: false },
@@ -60,7 +59,6 @@
       render();
    };
 
-
    const renderTasks = () => {
       let htmlString = "";
       for (const task of tasks) {
@@ -74,11 +72,19 @@
       };
 
       document.querySelector(".js-tasks").innerHTML = htmlString;
-   }
+   };
 
-
-
-   const renderButtons = () => { }
+   const renderButtons = () => {
+      let htmlString2 = "";
+      if (tasks.length !== 0) {
+         htmlString2 += `
+               <button class ="list__button js-tasksCompleted">Pokaż <span
+               class="js-tasksState">ukończone</span></button>
+               <button class ="list__button js-completeAll">Ukończ wszystkie</button>
+               `
+      }
+      document.querySelector(".js-task-buttons").innerHTML = htmlString2;
+   };
 
    const bindEvents = () => {
       const completedTasksButtons = document.querySelectorAll(".js-tasksCompleted");
@@ -86,7 +92,7 @@
       completedTasksButtons.forEach((completedTasksButton, index) => {
          completedTasksButton.addEventListener("click", () => {
             showTasksCompleted(index);
-            
+
          });
       });
 
@@ -97,7 +103,7 @@
             completeTasksAll(index);
          });
       });
-   }
+   };
 
    const bindButtonsEvents = () => {
       const removeButtons = document.querySelectorAll(".js-remove");
@@ -115,13 +121,14 @@
             toggleTaskDone(index);
          });
       });
-   }
+   };
 
    const render = () => {
-      renderTasks();
       renderButtons();
+      renderTasks();
       bindButtonsEvents();
       bindEvents();
+      console.log(tasks);
    };
 
    const onFormSubmit = (event) => {
