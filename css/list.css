@@ -24,8 +24,10 @@
     color: white;
     padding: 15px;
     flex-basis: 5%;
-    transition: 200ms;
     margin-left: 5px;
+}
+.list__button:disabled:hover {    /* nie wiedzialem ze tak mozna, przypadkiem to odkrylem */
+    transform: none;
 }
 
 
