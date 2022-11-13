@@ -78,10 +78,10 @@
       let htmlString2 = "";
       if (tasks.length !== 0) {
          htmlString2 += `
-               <button class ="list__button js-tasksCompleted">Pokaż <span
-               class="js-tasksState">ukończone</span></button>
-               <button class ="list__button js-completeAll">Ukończ wszystkie</button>
-               `
+               <button class ="list__button js-tasksCompleted"><span
+               class="js-showButtonState">Pokaż</span> ukończone</button>
+               <button class ="list__button js-completeAll" ${tasks.every(({ done }) => done) ? `disabled` : ``}>Ukończ wszystkie</button>
+               `;
       }
       document.querySelector(".js-task-buttons").innerHTML = htmlString2;
    };
@@ -124,11 +124,13 @@
    };
 
    const render = () => {
-      renderButtons();
       renderTasks();
       bindButtonsEvents();
+      renderButtons();
       bindEvents();
-      console.log(tasks);
+
+      console.log(tasks.done);
+
    };
 
    const onFormSubmit = (event) => {

@@ -18,6 +18,16 @@
     transition: 100ms;
 }
 
+.list__button:disabled {
+    background-color: #aaa;
+    border: 1px solid white;
+    color: white;
+    padding: 15px;
+    flex-basis: 5%;
+    transition: 200ms;
+    margin-left: 5px;
+}
+
 
 .list__tasks {
     display: grid;
