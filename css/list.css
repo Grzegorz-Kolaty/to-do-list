@@ -12,7 +12,6 @@
     transition: 200ms;
     margin-left: 5px;
     align-items: center;
-
 }
 
 .list__button:hover {
@@ -87,20 +86,17 @@
     padding: 5px 7px;
     font-size: 20px;
     transition: 200ms;
-
 }
 
 .list__checkButton--true:active {
     border: 2px solid black;
     transform: scale(1.25);
     transition: 200ms;
-
 }
 
 .list__checkButton--true:hover {
     transform: scale(1.25);
     transition: 200ms;
-
 }
 
 .list__removeButton {
@@ -119,7 +115,6 @@
 
 @media (max-width: 900px) {
     .list__button {
-
         margin-top: 10px;
         flex-basis: 100%;
     }
