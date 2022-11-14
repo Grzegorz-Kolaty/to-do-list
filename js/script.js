@@ -41,10 +41,10 @@
       render();
    };
 
-   const showTasksCompleted = () => {
-      tasks = tasks.filter(task => task.done)
-      render()
-   };
+   const toggleButtonShow = () => {
+      tasks = tasks.filter(({ done }) => !done);
+      render();
+   }
 
    const completeTasksAll = () => {
       tasks = tasks.map((task) => {
@@ -78,8 +78,8 @@
       let htmlString2 = "";
       if (tasks.length !== 0) {
          htmlString2 += `
-               <button class ="list__button js-tasksCompleted"><span
-               class="js-showButtonState">Pokaż</span> ukończone</button>
+               <button class ="list__button js-buttonShow"><span
+               class="js-showButtonState"></span> ukończone</button>
                <button class ="list__button js-completeAll" ${tasks.every(({ done }) => done) ? `disabled` : ``}>Ukończ wszystkie</button>
                `;
       }
@@ -87,14 +87,9 @@
    };
 
    const bindEvents = () => {
-      const completedTasksButtons = document.querySelectorAll(".js-tasksCompleted");
+      const toggleButtonsShow = document.querySelectorAll(".js-buttonShow");
 
-      completedTasksButtons.forEach((completedTasksButton, index) => {
-         completedTasksButton.addEventListener("click", () => {
-            showTasksCompleted(index);
-
-         });
-      });
+      toggleButtonsShow.addEventListener("click", toggleButtonShow);
 
       const completeTasksButtons = document.querySelectorAll(".js-completeAll");
 
@@ -128,9 +123,6 @@
       bindButtonsEvents();
       renderButtons();
       bindEvents();
-
-      console.log(tasks.done);
-
    };
 
    const onFormSubmit = (event) => {
