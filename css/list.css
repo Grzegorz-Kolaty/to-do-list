@@ -11,6 +11,8 @@
     flex-basis: 5%;
     transition: 200ms;
     margin-left: 5px;
+    align-items: center;
+
 }
 
 .list__button:hover {
@@ -26,7 +28,9 @@
     flex-basis: 5%;
     margin-left: 5px;
 }
-.list__button:disabled:hover {    /* nie wiedzialem ze tak mozna, przypadkiem to odkrylem */
+
+.list__button:disabled:hover {
+    /* nie wiedzialem ze tak mozna, przypadkiem to odkrylem */
     transform: none;
 }
 
@@ -111,4 +115,18 @@
 .list__removeButton:hover {
     transform: scale(1.35);
     transition: 200ms;
+}
+
+@media (max-width: 900px) {
+    .list__button {
+
+        margin-top: 10px;
+        flex-basis: 100%;
+    }
+
+    .js-task-buttons {
+        display: flex;
+        flex-direction: column;
+        align-self: stretch;
+    }
 }

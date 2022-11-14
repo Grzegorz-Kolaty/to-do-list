@@ -3,8 +3,8 @@
 }
 
 .headings {
-    display: grid;
-    grid-template-columns: 1fr auto auto;
+    display: flex;
+    flex-direction: row;
     padding: 20px;
     border-bottom: 1px solid rgb(218, 213, 213);
     margin: 0;
@@ -12,7 +12,14 @@
 }
 
 .section__header {
-    justify-content: center;
+    flex-grow: 1;
     margin: 0;
     font-size: 1.5em;
+}
+
+@media (max-width: 900px) {
+.headings {
+    display: flex;
+    flex-direction: column;
+}
 }
