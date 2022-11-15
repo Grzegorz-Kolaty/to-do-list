@@ -77,6 +77,7 @@
 .list__checkButton:hover {
     transform: scale(1.25);
     transition: 200ms;
+    background-color: hsl(120, 100%, 30%);
 }
 
 .list__checkButton--true {
@@ -97,6 +98,7 @@
 .list__checkButton--true:hover {
     transform: scale(1.25);
     transition: 200ms;
+    background-color: hsl(120, 100%, 35%);
 }
 
 .list__removeButton {
@@ -111,6 +113,7 @@
 .list__removeButton:hover {
     transform: scale(1.35);
     transition: 200ms;
+    background-color: hsl(0, 100%, 65%);
 }
 
 @media (max-width: 900px) {

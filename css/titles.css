@@ -18,8 +18,8 @@
 }
 
 @media (max-width: 900px) {
-.headings {
-    display: flex;
-    flex-direction: column;
-}
+    .headings {
+        display: flex;
+        flex-direction: column;
+    }
 }
