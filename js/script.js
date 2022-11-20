@@ -1,4 +1,6 @@
 {
+   let tasksHidingSwitch = false;
+
    let tasks = [
       {
          content: "kodzić troche",
@@ -9,13 +11,6 @@
          done: false,
       },
    ];
-
-   let tasksHidingSwitch = false;
-
-   const tasksHidingSwitchToggle = () => {
-      tasksHidingSwitch = !tasksHidingSwitch
-   };
-
 
    const addNewTask = (newTaskContent) => {
       tasks = [
@@ -52,13 +47,14 @@
          htmlString += `
          <li class="list__tasks ${task.done && tasksHidingSwitch ? "list__tasks--hidden" : ""}">
            <span class="list__item${task.done ? " list__item--done" : ""}">
-            <button class="js-done${task.done ? " list__checkButton--true" : " list__checkButton"}">✔</button> 
-               ${task.content} 
-            <button class="js-remove list__removeButton">🗑</button>
+               <button class="js-done${task.done ? " list__checkButton--true" : " list__checkButton"}">
+               ${task.done ? "✔" : ""}
+               </button> 
+                  ${task.content} 
+               <button class="js-remove list__removeButton">🗑</button>
            </span>
          </li>
-      `;
-      };
+         `};
 
       document.querySelector(".js-tasks").innerHTML = htmlString;
    };
@@ -79,29 +75,59 @@
       });
    };
 
-   toggleListButtons = () => {
+   toggleListButtons = () => { // ciezko to jakos czytelnie sformatowac, daj prosze znac czy jest okej
+      const completeListButton = document.querySelector(".js-tasks-buttons")
 
-      if (tasks.length > 1) {
-         console.log(tasks.length);
+      if (tasks.length !== 0) {
 
          let htmlString = "";
-         showListButton = document.querySelector(".js-tasks-buttons")
-         completeListButton = document.querySelector(".js-tasks-buttons")
-         tasks.every(({ done }) => done)
-            ? (htmlString += ` <button class="list__button js-showList">Pokaż ukończone</button> `, tasksHidingSwitchToggle())
-            : htmlString += ` <button class="list__button js-showList">Ukryj ukończone</button> `
+         htmlString +=
+            `<button class="list__button js-showList">
+               ${tasks.some(({ done }) => done) && tasksHidingSwitch
+               ? "Pokaż ukończone"
+               : "Ukryj ukończone"} 
+            </button>`
 
-         showListButton.innerHTML = htmlString;
+         htmlString +=
+            `<button class="list__button js-completeList" 
+               ${tasks.every(({ done }) => done)
+               ? `disabled`
+               : ``}
+               >Ukończ zadania</button> 
+            `;
 
-         htmlString += ` <button class="list__button js-completeList" ${tasks.every(({ done }) => done) ? `disabled` : ``}>Ukończ zadania</button> `
          completeListButton.innerHTML = htmlString;
+
+      } else {
+         completeListButton.innerHTML = "";
       }
+   };
+
+   toggleListButtonEvents = () => {
+      const toggleListState = document.querySelector(".js-showList");
+      toggleListState.addEventListener("click", () => {
+         tasks.some(({ done }) => done) ? tasksHidingSwitch = !tasksHidingSwitch : "";
+         render();
+      })
+
+      const toggleTasksAsDone = document.querySelector(".js-completeList");
+      toggleTasksAsDone.addEventListener("click", () => {
+         tasks = tasks.map((task) => { // iteruj po kazdym tasku i kazdemu done ustaw na true
+            return {
+               ...task,
+               done: true
+            }
+         });
+         render();
+      })
+
    };
 
    render = () => {
       renderTasks();
-      bindButtonsEvents();
       toggleListButtons();
+      toggleListButtonEvents();
+      bindButtonsEvents();
    };
 
    const onFormSubmit = (event) => {
