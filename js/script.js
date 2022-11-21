@@ -43,17 +43,20 @@
 
    const renderTasks = () => {
       let htmlString = "";
+
       for (const task of tasks) {
          htmlString += `
-         <li class="list__tasks ${task.done && tasksHidingSwitch ? "list__tasks--hidden" : ""}">
-           <span class="list__item${task.done ? " list__item--done" : ""}">
-               <button class="js-done${task.done ? " list__checkButton--true" : " list__checkButton"}">
-               ${task.done ? "✔" : ""}
+            <li class="list__tasks ${task.done && tasksHidingSwitch ? "list__tasks--hidden" : ""}">
+               <button class="js-done list__checkButton ${task.done ? "list__checkButton--true" : ""}">
+                  ✔
                </button> 
+
+               <span class="list__item${task.done ? " list__item--done" : ""}">
                   ${task.content} 
+               </span>
+
                <button class="js-remove list__removeButton">🗑</button>
-           </span>
-         </li>
+            </li>
          `};
 
       document.querySelector(".js-tasks").innerHTML = htmlString;
@@ -112,7 +115,7 @@
 
       const toggleTasksAsDone = document.querySelector(".js-completeList");
       toggleTasksAsDone.addEventListener("click", () => {
-         tasks = tasks.map((task) => { // iteruj po kazdym tasku i kazdemu done ustaw na true
+         tasks = tasks.map((task) => { // iteruj po kazdym tasku  i kazdemu done ustaw na true
             return {
                ...task,
                done: true
@@ -120,7 +123,6 @@
          });
          render();
       })
-
    };
 
    render = () => {
