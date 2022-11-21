@@ -6,7 +6,7 @@
     display: flex;
     flex-direction: row;
     padding: 20px;
-    border-bottom: 1px solid rgb(218, 213, 213);
+    border-bottom: 3px solid rgb(218, 213, 213);
     margin: 0;
     align-items: center;
 }
@@ -14,12 +14,38 @@
 .section__header {
     flex-grow: 1;
     margin: 0;
-    font-size: 1.5em;
+    font-size: 25px;
+}
+
+.section__header {
+    font-size: 25px;
+}
+
+.js-tasks-buttons {
+    display: flex;
+    padding: 0px;
+    margin: 0px;
+}
+
+.section__task {
+    padding: 10px;
 }
 
 @media (max-width: 900px) {
     .headings {
         display: flex;
         flex-direction: column;
+        align-items: stretch
     }
+
+    .js-tasks-buttons {
+        margin-top: 20px;
+        flex-wrap: wrap;
+    }
+
+    .list__button {
+        flex-basis: 100%;
+        justify-content: center;
+    }
+
 }

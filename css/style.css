@@ -10,17 +10,16 @@ html {
 
 .body {
     font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
     padding: 20px;
     background-color: rgb(224, 223, 223);
     max-width: 1200px;
     display: flex;
-    justify-content: center;
     flex-direction: column;
-    margin: 10px auto;
+    margin: 0 auto;
 }
 
 .container {
-    border: 2px solid rgb(224, 220, 220);
     background-color: white;
     display: flex;
     flex-direction: column;

@@ -11,6 +11,12 @@
     border: 2px solid rgb(221, 220, 220);
     padding: 10px;
     flex-basis: 80%;
+    transition: 100ms;
+}
+
+.form__input:focus {
+    transition: 100ms;
+    transform: scale(103%);
 }
 
 .form__button {
@@ -19,12 +25,14 @@
     border: none;
     padding: 10px;
     flex-basis: 15%;
-    transition: 300ms;
+    transition: 100ms;
 }
 
 .form__button:hover {
-    transition: 300ms;
-    transform: scale(1.10);
+    transition: 100ms;
+    transform: scale(105%);
+    background-color: hsl(180, 100%, 30%);
+
 }
 
 @media (max-width: 900px) {
@@ -35,10 +43,5 @@
 
     .form__button {
         flex-basis: 100%;
-    }
-
-    .form__button:hover {
-        transition: 300ms;
-        transform: scale(1.05);
     }
 }
