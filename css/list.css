@@ -10,8 +10,8 @@
     color: white;
     padding: 15px;
     transition: 200ms;
-    margin: 5px;
     align-items: center;
+    margin: 10px;
 }
 
 .list__button:hover {
@@ -22,7 +22,6 @@
 
 .list__button:disabled {
     background-color: #aaa;
-    border: 1px solid white;
     color: white;
     padding: 15px;
 }
@@ -51,7 +50,7 @@
 }
 
 .list__item:hover {
-    transform: scale(110%) translateX(55px);
+    transform: scale(101%);
     transition: 200ms;
 }
 

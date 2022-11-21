@@ -9,7 +9,7 @@ html {
 }
 
 .body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Lato', sans-serif;
     font-weight: 400;
     padding: 20px;
     background-color: rgb(224, 223, 223);
@@ -17,6 +17,7 @@ html {
     display: flex;
     flex-direction: column;
     margin: 0 auto;
+    word-break: break-word;
 }
 
 .container {
