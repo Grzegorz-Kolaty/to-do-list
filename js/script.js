@@ -78,7 +78,7 @@
       });
    };
 
-   toggleListButtons = () => { // ciezko to jakos czytelnie sformatowac, daj prosze znac czy jest okej
+   const toggleListButtons = () => { // ciezko to jakos czytelnie sformatowac, daj prosze znac czy jest okej
       const completeListButton = document.querySelector(".js-tasks-buttons")
 
       if (tasks.length !== 0) {
@@ -106,9 +106,9 @@
       }
    };
 
-   toggleListButtonEvents = () => {
+   const toggleListButtonEvents = () => {
       const toggleListState = document.querySelector(".js-showList");
-      toggleListState.addEventListener("click", () => {
+       toggleListState.addEventListener("click", () => {
          tasks.some(({ done }) => done) ? tasksHidingSwitch = !tasksHidingSwitch : "";
          render();
       })
@@ -125,7 +125,7 @@
       })
    };
 
-   render = () => {
+   const render = () => {
       renderTasks();
       toggleListButtons();
       toggleListButtonEvents();
