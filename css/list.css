@@ -5,9 +5,9 @@
 }
 
 .list__button {
-    background-color: teal;
+    background-color: white;
     border: none;
-    color: white;
+    color: teal;
     padding: 15px;
     transition: 200ms;
     align-items: center;
@@ -15,14 +15,12 @@
 }
 
 .list__button:hover {
-    background-color: hsl(180, 100%, 30%);
-    transform: scale(105%);
+    color: hsl(180, 100%, 30%);
     transition: 100ms;
 }
 
 .list__button:disabled {
-    background-color: #aaa;
-    color: white;
+    color: #aaa;
     padding: 15px;
 }
 
