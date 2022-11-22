@@ -1,16 +1,7 @@
 {
    let tasksHidingSwitch = false;
 
-   let tasks = [
-      {
-         content: "kodzić troche",
-         done: true,
-      },
-      {
-         content: "pograc w gry",
-         done: false,
-      },
-   ];
+   let tasks = [];
 
    const addNewTask = (newTaskContent) => {
       tasks = [
@@ -46,12 +37,22 @@
 
       for (const task of tasks) {
          htmlString += `
-            <li class="list__tasks ${task.done && tasksHidingSwitch ? "list__tasks--hidden" : ""}">
-               <button class="js-done list__checkButton ${task.done ? "list__checkButton--true" : ""}">
+            <li class="list__tasks
+               ${task.done && tasksHidingSwitch
+               ? "list__tasks--hidden"
+               : ""}">
+               
+               <button class="js-done list__checkButton
+               ${task.done
+               ? "list__checkButton--true"
+               : ""}">
                   ✔
                </button> 
 
-               <span class="list__item${task.done ? " list__item--done" : ""}">
+               <span class="list__item
+               ${task.done
+               ? " list__item--done"
+               : ""}">
                   ${task.content} 
                </span>
 
