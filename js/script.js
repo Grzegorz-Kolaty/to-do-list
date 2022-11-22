@@ -83,21 +83,18 @@
 
       if (tasks.length !== 0) {
 
-         let htmlString = "";
-         htmlString +=
-            `<button class="list__button js-showList">
-               ${tasks.some(({ done }) => done) && tasksHidingSwitch
-               ? "Pokaż ukończone"
-               : "Ukryj ukończone"} 
-            </button>`
-
-         htmlString +=
-            `<button class="list__button js-completeList" 
-               ${tasks.every(({ done }) => done)
-               ? `disabled`
-               : ``}
-               >Ukończ zadania</button> 
-            `;
+         let htmlString =
+         `<button class="list__button js-showList">
+            ${tasks.some(({ done }) => done) && tasksHidingSwitch
+            ? "Pokaż ukończone"
+            : "Ukryj ukończone"} 
+         </button>
+         <button class="list__button js-completeList" 
+            ${tasks.every(({ done }) => done)
+            ? `disabled`
+            : ``}
+            >Ukończ zadania</button> 
+         `;
 
          completeListButton.innerHTML = htmlString;
 
