@@ -21,7 +21,6 @@
 
 .list__button:disabled {
     color: #aaa;
-    padding: 15px;
 }
 
 .list__button:disabled:hover {

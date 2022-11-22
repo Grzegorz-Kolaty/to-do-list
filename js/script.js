@@ -78,21 +78,21 @@
       });
    };
 
-   const toggleListButtons = () => { // ciezko to jakos czytelnie sformatowac, daj prosze znac czy jest okej
+   const toggleListButtons = () => {
       const completeListButton = document.querySelector(".js-tasks-buttons")
 
       if (tasks.length !== 0) {
 
          let htmlString =
-         `<button class="list__button js-showList">
+            `<button class="list__button js-showList">
             ${tasks.some(({ done }) => done) && tasksHidingSwitch
-            ? "Pokaż ukończone"
-            : "Ukryj ukończone"} 
+               ? "Pokaż ukończone"
+               : "Ukryj ukończone"} 
          </button>
          <button class="list__button js-completeList" 
             ${tasks.every(({ done }) => done)
-            ? `disabled`
-            : ``}
+               ? `disabled`
+               : ``}
             >Ukończ zadania</button> 
          `;
 
@@ -104,22 +104,24 @@
    };
 
    const toggleListButtonEvents = () => {
-      const toggleListState = document.querySelector(".js-showList");
-       toggleListState.addEventListener("click", () => {
-         tasks.some(({ done }) => done) ? tasksHidingSwitch = !tasksHidingSwitch : "";
-         render();
-      })
+      if (tasks.length !== 0) {
+         const toggleListState = document.querySelector(".js-showList");
+         toggleListState.addEventListener("click", () => {
+            tasks.some(({ done }) => done) ? tasksHidingSwitch = !tasksHidingSwitch : "";
+            render();
+         })
 
-      const toggleTasksAsDone = document.querySelector(".js-completeList");
-      toggleTasksAsDone.addEventListener("click", () => {
-         tasks = tasks.map((task) => { // iteruj po kazdym tasku  i kazdemu done ustaw na true
-            return {
-               ...task,
-               done: true
-            }
-         });
-         render();
-      })
+         const toggleTasksAsDone = document.querySelector(".js-completeList");
+         toggleTasksAsDone.addEventListener("click", () => {
+            tasks = tasks.map((task) => {
+               return {
+                  ...task,
+                  done: true
+               }
+            });
+            render();
+         })
+      }
    };
 
    const render = () => {
