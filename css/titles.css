@@ -26,8 +26,10 @@
 
 .js-tasks-buttons {
     display: flex;
+    flex-wrap: wrap;
     padding: 0px;
     margin: 0px;
+    justify-content: center;
 }
 
 .section__task {
@@ -35,19 +37,7 @@
 }
 
 @media (max-width: 900px) {
-    .headings {
-        display: flex;
-        flex-direction: column;
-        align-items: stretch
-    }
-
-    .js-tasks-buttons {
+    .list__buttons {
         flex-direction: column;
     }
-
-    .list__button {
-        flex-basis: 100%;
-        justify-content: center;
-    }
-
 }
